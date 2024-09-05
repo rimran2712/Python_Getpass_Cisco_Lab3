@@ -1,0 +1,141 @@
+2024-09-04 18:30:02,720 -  nornir.core -     INFO -        run() - Running task 'configure_basic_ip_addresses' with args {} on 8 hosts
+2024-09-04 18:54:49,065 -  nornir.core -     INFO -        run() - Running task 'send_show_command' with args {} on 8 hosts
+2024-09-04 18:54:53,446 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R5': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 309, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2024-09-04 18:54:53,446 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R5': task 'send_show_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/Runbooks_Repositories/Python_Getpass_Cisco_Lab3/2_Scrapli_Getpass_Multiple_Pswds_Lab2.py", line 33, in send_show_command
+    task.run (task=send_command, command="show ip int brie")
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2024-09-04 18:54:53,482 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R6': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 309, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2024-09-04 18:54:53,482 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R6': task 'send_show_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/Runbooks_Repositories/Python_Getpass_Cisco_Lab3/2_Scrapli_Getpass_Multiple_Pswds_Lab2.py", line 33, in send_show_command
+    task.run (task=send_command, command="show ip int brie")
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2024-09-04 18:54:53,661 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R8': task 'send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir_scrapli/tasks/core/send_command.py", line 37, in send_command
+    scrapli_conn = task.host.get_connection("scrapli", task.nornir.config)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir_scrapli/connection.py", line 106, in open
+    connection.open()
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/driver/base/sync_driver.py", line 106, in open
+    self.channel.channel_authenticate_ssh(
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/decorators.py", line 224, in decorate
+    return _multiprocessing_timeout(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/decorators.py", line 115, in _multiprocessing_timeout
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.12/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/scrapli/channel/sync_channel.py", line 309, in channel_authenticate_ssh
+    raise ScrapliAuthenticationFailed(msg)
+scrapli.exceptions.ScrapliAuthenticationFailed: password prompt seen more than once, assuming auth failed
+
+2024-09-04 18:54:53,662 - nornir.core.task -    ERROR -      start() - Host 'vIOS-R8': task 'send_show_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/imran/Documents/Automation/Nornir/Runbooks_Repositories/Python_Getpass_Cisco_Lab3/2_Scrapli_Getpass_Multiple_Pswds_Lab2.py", line 33, in send_show_command
+    task.run (task=send_command, command="show ip int brie")
+  File "/home/imran/Documents/Automation/Nornir/.MyNAPALMvenv/lib/python3.12/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: send_command (failed)
+
+
+2024-09-04 18:59:20,711 -  nornir.core -     INFO -        run() - Running task 'send_show_command' with args {} on 8 hosts
